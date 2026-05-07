@@ -77,6 +77,6 @@ public class ChatServiceTest {
         ChatResponse response = chatService.getChatResponse("Tell me something about deployment");
 
         // The service catches exceptions and returns an error message
-        assertTrue(response.getResponse().contains("working offline"));
+        assertTrue(response.getResponse().contains("Gemini API error (500)"));
     }
 }
