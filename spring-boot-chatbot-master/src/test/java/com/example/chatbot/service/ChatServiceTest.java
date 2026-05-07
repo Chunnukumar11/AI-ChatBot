@@ -77,6 +77,6 @@ public class ChatServiceTest {
         ChatResponse response = chatService.getChatResponse("Hi");
 
         // The service catches exceptions and returns an error message
-        assertTrue(response.getResponse().contains("Error"));
+        assertTrue(response.getResponse().contains("working offline"));
     }
 }

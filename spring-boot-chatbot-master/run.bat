@@ -31,11 +31,11 @@ echo [SUCCESS] Build completed successfully!
 echo.
 
 REM Step 2: Run the application
-echo [RUNNING] Starting application on http://localhost:8080
+echo [RUNNING] Starting application on http://localhost:8085
 echo ----------------------------------------
 echo.
 echo [INFO] Application started! Open your browser and navigate to:
-echo        http://localhost:8080
+echo        http://localhost:8085
 echo.
 echo [TEST] Test the chatbot with these hardcoded responses:
 echo        * 'Hello' or 'Hi' - Greeting responses
