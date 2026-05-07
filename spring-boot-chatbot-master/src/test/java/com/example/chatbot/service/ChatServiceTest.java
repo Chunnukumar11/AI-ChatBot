@@ -65,7 +65,7 @@ public class ChatServiceTest {
                 .setBody(jsonResponse)
                 .addHeader("Content-Type", "application/json"));
 
-        ChatResponse response = chatService.getChatResponse("Hi");
+        ChatResponse response = chatService.getChatResponse("Tell me something about testing");
 
         assertEquals("Hello! How can I help you?", response.getResponse());
     }
@@ -74,7 +74,7 @@ public class ChatServiceTest {
     void testGetChatResponse_Error() {
         mockWebServer.enqueue(new MockResponse().setResponseCode(500));
 
-        ChatResponse response = chatService.getChatResponse("Hi");
+        ChatResponse response = chatService.getChatResponse("Tell me something about deployment");
 
         // The service catches exceptions and returns an error message
         assertTrue(response.getResponse().contains("working offline"));
