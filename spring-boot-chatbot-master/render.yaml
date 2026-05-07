@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: spring-boot-chatbot
+    runtime: docker
+    repo: https://github.com/Shubham-kumar2507/spring-boot-chatbot.git
+    branch: master
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: PORT
+        value: 8085
+      - key: JAVA_OPTS
+        value: -Xmx512m -Xms256m
