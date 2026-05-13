@@ -38,6 +38,7 @@ bin/
 
 # Spring Boot
 application-local.properties
+.env
 
 # OS
 .DS_Store

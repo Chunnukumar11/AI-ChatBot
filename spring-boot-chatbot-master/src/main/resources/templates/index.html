@@ -37,7 +37,7 @@
             <header class="chat-header">
                 <div class="header-info">
                     <h2>AI Assistant</h2>
-                    <p>Powered by Google Gemini Pro</p>
+                    <p>Powered by Google Gemini</p>
                 </div>
                 <div class="header-actions">
                     <button class="icon-btn" title="Clear Chat"><i class="fa-solid fa-trash-can"></i></button>
@@ -162,7 +162,7 @@
         // ===== Attachment Button =====
         attachBtn.addEventListener('click', () => {
             // Show file input dialog or feature notification
-            showNotification('📎 File attachment feature coming soon!', 'info');
+            showNotification('File attachment feature coming soon!', 'info');
         });
 
         // ===== Chat Form Submission =====
@@ -216,9 +216,15 @@
             const contentDiv = document.createElement('div');
             contentDiv.className = 'message-content';
             
-            // Allow basic line breaks
-            const formattedText = text.replace(/\n/g, '<br>');
-            contentDiv.innerHTML = `<p>${formattedText}</p>`;
+            // Render text safely while preserving line breaks.
+            const paragraph = document.createElement('p');
+            String(text).split('\n').forEach((line, index) => {
+                if (index > 0) {
+                    paragraph.appendChild(document.createElement('br'));
+                }
+                paragraph.appendChild(document.createTextNode(line));
+            });
+            contentDiv.appendChild(paragraph);
             
             if (sender === 'bot') {
                 messageDiv.appendChild(avatar);

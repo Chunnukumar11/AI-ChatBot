@@ -25,4 +25,3 @@ public class ChatResponse {
         this.response = response;
     }
 }
-
